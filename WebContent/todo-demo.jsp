@@ -18,7 +18,15 @@
 		session.setAttribute("myToDoList", items);
 	}
 	
+	
+	
 	String theItem = request.getParameter("theItem");
+	
+	//update clean version each time
+	
+	boolean isItemNotEmpty = theItem != null && theItem.trim().length() > 0;
+	boolean isItemNotDuplicate = theItem != null && !items.contains(theItem.trim());
+	
 	if(theItem != null){
 		
 		items.add(theItem);
@@ -35,6 +43,9 @@
 	}
 %>
 </ol>
+<br/>
+
+
 
 </body>
 </html>
